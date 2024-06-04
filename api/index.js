@@ -8,11 +8,8 @@ import cookieParser from "cookie-parser";
 import path from "path";
 dotenv.config();
 
-const mongodb =
-  "mongodb+srv://parekhmanan74:parekhmanan@estate.j8qdpog.mongodb.net/?retryWrites=true&w=majority&appName=estate";
-
 mongoose
-  .connect(mongodb)
+  .connect(process.env.mongoDb)
   .then(() => {
     console.log("Connected to MongoDB!");
   })
